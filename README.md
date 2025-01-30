@@ -1,10 +1,7 @@
 # DRS-means - Distributed Random Swap for Minimum Sum-of-Squares Clustering
 
-This repository contains a Python implementation of the DRS-means algorithm, based on its description in 
-
-* O. Kozbagarov, R. Mussabayev, "[Distributed random swap: An efficient algorithm for minimum sum-of-squares clustering](https://www.sciencedirect.com/science/article/pii/S0020025524011186)", _Information Sciences_ 681 (2024) 121204.
-
-This implementation, created by Tapio Pahikkala, is based on [RandomSwap](https://github.com/uef-machine-learning/RandomSwap)-algorithm by Pasi Fränti and Juha Kivijärvi.
+This repository contains a Python implementation of the DRS-means algorithm, based on its description in [1] by Olzhas Kozbagarov and Rustam Mussabayev.
+This implementation, created by Tapio Pahikkala, utilizes [RandomSwap](https://github.com/uef-machine-learning/RandomSwap)-algorithm by Pasi Fränti and Juha Kivijärvi [2].
 
 
 ## Files included
@@ -15,6 +12,10 @@ This implementation, created by Tapio Pahikkala, is based on [RandomSwap](https:
 
 To use the code type:
 
+## References:
 
+  [1] O. Kozbagarov, R. Mussabayev, "[Distributed random swap: An efficient algorithm for minimum sum-of-squares clustering](https://www.sciencedirect.com/science/article/pii/S0020025524011186)", _Information Sciences_ 681 (2024) 121204.
+  
+  [2] P. Fränti, J. Kivijärvi. "[Randomized local search algorithm for the clustering problem](www.cs.joensuu.fi/pub/franti/papers/Rls.ps)". _Pattern Analysis and Applications_, 3 (4), 358-369, 2000.
 
 
