@@ -1,7 +1,7 @@
 # DRS-means - Distributed Random Swap for Minimum Sum-of-Squares Clustering
 
-This repository contains a Python implementation of the DRS-means algorithm, based on its description in [1] by Olzhas Kozbagarov and Rustam Mussabayev.
-This implementation, created by Tapio Pahikkala, utilizes [RandomSwap](https://github.com/uef-machine-learning/RandomSwap)-algorithm by Pasi Fränti and Juha Kivijärvi [2].
+This repository contains a Python implementation of the DRS-means algorithm, based on its description in [1] by _Olzhas Kozbagarov_ and _Rustam Mussabayev_.
+This implementation, created by _Tapio Pahikkala_, utilizes [RandomSwap](https://github.com/uef-machine-learning/RandomSwap)-algorithm by _Pasi Fränti_ and _Juha Kivijärvi_ [2].
 
 
 ## Files included
