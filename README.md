@@ -4,13 +4,23 @@ This repository contains a Python implementation of the DRS-means algorithm, bas
 This implementation, created by _Tapio Pahikkala_, utilizes [RandomSwap](https://github.com/uef-machine-learning/RandomSwap)-algorithm by _Pasi Fränti_ and _Juha Kivijärvi_ [2].
 
 
-## Files included
-
+## Files included / needed
+* DRSmeans.py
+  - Main program for DRS-means
+     
+* random_swap.py
+  - Random swap algorithm is available at https://github.com/uef-machine-learning/RandomSwap
 
 
 ## Installation and usage
 
-To use the code type:
+To use the code:
+
+  1. Download [RandomSwap](https://github.com/uef-machine-learning/RandomSwap) and the main program DRSmeans.py
+  2. Define the data, no. clusters, and no. random swap iterations in the DRSmeans.py file.
+  3. Finally, just type "python DRSmeans.py".
+
+The algorithm returns the MSSC-function value and used time, as well as cluster centers and distributions.
 
 ## References:
 
