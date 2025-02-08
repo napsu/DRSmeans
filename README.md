@@ -3,12 +3,16 @@
 This repository contains a Python implementation of the DRS-means algorithm, based on its description in [1] by _Olzhas Kozbagarov_ and _Rustam Mussabayev_.
 This implementation, created by _Tapio Pahikkala_, utilizes [Random swap](https://github.com/uef-machine-learning/RandomSwap)-algorithm by _Pasi Fränti_ and _Juha Kivijärvi_ [2].
 
+This implementation is used in our paper: 
+
+ * N. Karmitsa, V.-P. Eronen, M.M. Mäkelä, T. Pahikkala, A. Airola, "_Stochastic limited memory bundle algorithm for clustering in big data_", 2025.
+
 
 ## Files included / needed
 * DRSmeans.py
   - Main program for DRS-means
      
-* RandomSwap.py
+* RandomSwapAlt.py
   - Accelerated Random Swap algorithm. The original algorithm is available at https://github.com/uef-machine-learning/RandomSwap
 
 
@@ -16,7 +20,7 @@ This implementation, created by _Tapio Pahikkala_, utilizes [Random swap](https:
 
 To use the code:
 
-  1. Download DRSmeans.py and RandomSwap.py.
+  1. Download DRSmeans.py and RandomSwapAlt.py.
   2. Define the data-file, no. clusters, and no. random swap iterations at the end of the DRSmeans.py file.
   3. Finally, just type "python DRSmeans.py".
 
