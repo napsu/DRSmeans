@@ -8,7 +8,7 @@ This implementation is used in our paper:
  * N. Karmitsa, V.-P. Eronen, M.M. Mäkelä, T. Pahikkala, A. Airola, "_Stochastic limited memory bundle algorithm for clustering in big data_", 2025.
 
 
-## Files included / needed
+## Files included
 * DRSmeans.py
   - Main program for DRS-means
      
