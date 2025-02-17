@@ -17,19 +17,17 @@ algorithm for minimum sum-of-squares clustering", Information Sciences 681
 
 [2] P. Fränti, J. Kivijärvi. "Randomized local search algorithm for the 
 clustering problem". Pattern Analysis and Applications, 3 (4), 358-369, 2000.
+
 """
 
 import copy
 import cProfile as profile
-import pstats
-import random
 
 import numpy as np
 from scipy.spatial import distance
 
 from sklearn.neighbors import NearestNeighbors
 
-#import random_swap as rs
 import RandomSwapAlt as rs_alt
 import time 
 
@@ -94,7 +92,7 @@ def PerformDRS(X,iterationsRS,iterationKmean,clusters):
 
     """
     rng = np.random.default_rng()
-    #
+    
     h=int(X.shape[0] / 100) + 2
     
     nbrs = NearestNeighbors(n_neighbors=h, algorithm='ball_tree').fit(X)
@@ -103,7 +101,7 @@ def PerformDRS(X,iterationsRS,iterationKmean,clusters):
     hdists = distances[:, h - 1]
     constant = np.sum(hdists)
     invhdists = constant / hdists
-    pdense = invhdists / np.sum(invhdists)
+    pdense = invhdists / np.sum(invhdists + 1e-35) # to avoid division with zero
     
     #/* initial solution */
     # option 1.  select points ramdomly
@@ -119,7 +117,6 @@ def PerformDRS(X,iterationsRS,iterationKmean,clusters):
     cinds = np.arange(len(C))
     
     err=rs_alt.ObjectiveFunction(P,C,X)
-    # print("Initial MSE:",err*len(X[0])*len(X)) # multiplied by N*V
     # print("Initial MSE:",err)
     it=0
     while it <iterationsRS:
@@ -135,41 +132,41 @@ def PerformDRS(X,iterationsRS,iterationKmean,clusters):
         if  new_err<err :
            P=copy.deepcopy(P_new)
            C=copy.deepcopy(C_new)
-           print("Iteration:",it,"MSE=",new_err*len(X[0])*len(X)) # multiplied by N*V
            # print("Iteration:",it,"MSE=",new_err)
            err=new_err
         it+=1
     return P,C
 
-#profiler = profile.Profile()
-#profiler.enable()
-
 start = time.time() 
 
 # Give your data here
-X = np.loadtxt('/data/drift.txt') 
+#X = np.loadtxt('/data/drift.txt') 
+X = np.loadtxt('../../../../data/data_for_clustering/large_data_for_clustering/drift.txt') # ok 50 it DRSmeans : 17315988415148.715 200.571298122406 0.17215204238891602
 end = time.time() 
 timedata = end-start
 print(X.shape)
 
-# Give the numbers of RSiterations k-means iterations and clusters
+# Give the numbers of RSiterations, k-means iterations, and clusters
 iterationsRS,iterationKmean,clusters = 1000, 2, 25 
 print(iterationsRS,iterationKmean,clusters)
 
-for x in range(1): # loop for random runs
+for x in range(1): # Loop for random runs
     start = time.time()
 
+    # To run Distributed Random Swap algorihtm
     P, C = PerformDRS(X,iterationsRS,iterationKmean,clusters)
     objective_value = rs_alt.ObjectiveFunction(P,C,X)*len(X[0])*len(X) # multiplied by N*V
     end = time.time() 
 
-    print("DRSmeans   :",objective_value,end-start,timedata)
+    print("DRSmeans   :",objective_value, end-start, timedata)
     print(" ")
 
-
-#stats = pstats.Stats(profiler).strip_dirs().sort_stats("cumtime")
-#stats.print_stats(50)
-
+    # To run standart Random Swap algorithm
+    # P, C = rs_alt.PerformRS(X,iterationsRS,iterationKmean,clusters)
+    # objective_value = rs_alt.ObjectiveFunction(P,C,X)*len(X[0])*len(X) # multiplied by N*V
+    # end = time.time() 
+    # print("RS   :",objective_value, end-start, timedata)
+    # print(" ")
 
 #print(P) #Final cluster indices for each data
 #print(C) #Cluster center vectors of n_dim
