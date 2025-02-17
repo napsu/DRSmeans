@@ -140,8 +140,7 @@ def PerformDRS(X,iterationsRS,iterationKmean,clusters):
 start = time.time() 
 
 # Give your data here
-#X = np.loadtxt('/data/drift.txt') 
-X = np.loadtxt('../../../../data/data_for_clustering/large_data_for_clustering/drift.txt') # ok 50 it DRSmeans : 17315988415148.715 200.571298122406 0.17215204238891602
+X = np.loadtxt('/data/drift.txt') 
 end = time.time() 
 timedata = end-start
 print(X.shape)
