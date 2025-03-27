@@ -5,7 +5,7 @@ This implementation, created by _Tapio Pahikkala_, utilizes [Random swap](https:
 
 This implementation is used in our paper: 
 
- * N. Karmitsa, V.-P. Eronen, M.M. Mäkelä, T. Pahikkala, A. Airola, "_Stochastic limited memory bundle algorithm for clustering in big data_", 2025.
+ * N. Karmitsa, V.-P. Eronen, M.M. Mäkelä, T. Pahikkala, A. Airola, "[_Stochastic limited memory bundle algorithm for clustering in big data_](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4900011)" (author version, available at SSRN), Pattern Recognition, in-press 2025.
 
 
 ## Files included
